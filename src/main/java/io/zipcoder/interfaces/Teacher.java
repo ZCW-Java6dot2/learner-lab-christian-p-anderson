@@ -4,5 +4,5 @@ public interface Teacher {
 
     public void teach(Student student, double numberOfHours);
 
-    public void lecture(Student[] student, double NumberOfHours);
+    public void lecture(Student[] students, double numberOfHours);
 }
