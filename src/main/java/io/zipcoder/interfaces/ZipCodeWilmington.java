@@ -2,11 +2,14 @@ package io.zipcoder.interfaces;
 
 
 import java.util.ArrayList;
+
+import com.sun.deploy.net.MessageHeader;
 import io.zipcoder.interfaces.Instructor;
 
 public class ZipCodeWilmington {
 
-    private static ArrayList<Instructor> instructorList;
+
+    private static ArrayList<Instructor> instructorList = new ArrayList<Instructor>();
 
     static { // static initializer
         String[] instructorNames = {"Leon", "Tariq", "Froilan", "David", "Zach", "Iyasu"};

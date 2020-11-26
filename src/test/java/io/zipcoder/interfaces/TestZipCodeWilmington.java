@@ -1,32 +1,49 @@
 package io.zipcoder.interfaces;
 
 
+import org.apache.tools.ant.taskdefs.Zip;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.testng.Assert.*;;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TestZipCodeWilmington {
 
     @Before
     public void setup() {
-        ZipCodeWilmington testZCW = new ZipCodeWilmington();
-        testZCW.fireStaff();
+        ZipCodeWilmington.fireStaff();
     }
 
     @Test
     public void testFireStaff() {
         // Given
-        ZipCodeWilmington actual = new ZipCodeWilmington();
-        ArrayList<Instructor> expected = new ArrayList<Instructor>();
+        ZipCodeWilmington testZCW = new ZipCodeWilmington();
+        testZCW.fireStaff();
 
         // When
+        Boolean actual = testZCW.getInstructors().isEmpty();
+
+        // Then
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testHireStaff() {
+        // Given
+        ZipCodeWilmington testZCW = new ZipCodeWilmington();
+        Instructor parker = new Instructor("Parker");
+        testZCW.hire(parker);
+
+        // When
+        Boolean actual = testZCW.getInstructors().contains(parker);
 
 
         // Then
-        assertEquals(expected, actual.getInstructors());
+        assertTrue(actual);
+
     }
 
 
